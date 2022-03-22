@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="myReact.js"></script>
+</head>
+
+<body>
+    <bdo dir="rtl" id='root'></bdo>
+</body>
+
+</html>
+<script>
+
+    function Example(prop) {
+        if (!prop.cnt) return "";
+        const color = prop.color % 360;
+        var ele = React.createElement(
+            "span",
+            { style: `background-color: hsl(${color},100%,70%)` },
+            prop.cnt & 1,
+            React.createElement(Example, { cnt: prop.cnt >> 1, color: (color + 10) })
+        );
+        return ele;
+    }
+
+    var cnt = 0;
+    setInterval(() => {
+        cnt++;
+        React.render(React.createElement(Example, { cnt, color: cnt * 10 }),
+            document.getElementById('root'));
+    }, 50);
+
+</script>

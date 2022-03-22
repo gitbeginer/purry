@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body contenteditable="false">
+    <bdo id='root'></bdo>
+    <bdo dir="rtl" id='root2' style="float: left;margin-top: -20px;"></bdo>
+    <p style="clear:left;"><h3 id='sum'></h3></p>
+    <script>
+
+        const Hook = {
+            render: function (fn, dom) {
+                const newObj = { fn: fn, values: [], needInit: true, needUpdate: false, inputs: [] };
+                dom.hook = dom.hook || newObj;
+                clearInterval(dom.hook.clear);
+                if (dom.hook.fn != fn) dom.hook = newObj;
+
+                dom.hook.cur = 0;
+                dom.hook.effCur = 0;
+                dom.hook.effects = [];
+                Hook.current = dom;
+                const child = fn();
+                Hook.current = null;
+                dom.hook.needInit = false;
+                dom.innerHTML = '';
+                dom.appendChild(child);
+
+                setTimeout(() => {
+                    dom.hook.effects.forEach(element => element());
+                }, 1);
+                dom.hook.clear = setInterval(() => {
+                    if (dom.hook.needUpdate) {
+                        dom.hook.needUpdate = false;
+                        Hook.render(fn, dom);
+                    }
+                }, 20);
+            },
+            useState: function useState(val) {
+                const dom = Hook.current;
+                if (!dom || !dom.hook) {
+                    throw new Error("Can't find hookObj. Use render.");
+                }
+                let newVal = null;
+                const hook = dom.hook;
+                if (hook.needInit) {
+                    newVal = { value: val };
+                    newVal.setvalue = function (val) {
+                        newVal.value = val;
+                        hook.needUpdate = true;
+                    }
+                    hook.values.push(newVal);
+                    return Object.values(newVal);
+                }
+
+                if (hook.cur >= hook.values.length) {
+                    throw new Error("FATAL ERROR: No more useState.");
+                }
+
+                newVal = hook.values[hook.cur];
+                hook.cur++;
+                return Object.values(newVal);
+            },
+            useEffect: function (callback, input) {
+                if (typeof callback != 'function') {
+                    throw new Error("is not function");
+                }
+                const dom = Hook.current;
+                if (!dom || !dom.hook) {
+                    throw new Error("Can't find hookObj. Use render().");
+                }
+
+                hook = dom.hook;
+                if (hook.needInit) {
+                    hook.inputs.push(input);
+                    hook.effects.push(callback);
+                    return;
+                }
+
+                if (hook.effCur >= hook.inputs.length) {
+                    throw new Error("FATAL ERROR: No more useEffect");
+                }
+
+                const preInput = hook.inputs[hook.effCur];
+                if (!input)
+                    hook.inputs[hook.effCur] = [];
+                else if (!Array.isArray(input) && preInput != input)
+                    hook.inputs[hook.effCur] = input;
+                else if (Array.isArray(input)) {
+                    if (!Array.isArray(preInput) || input.length != preInput.length) {
+                        hook.inputs[hook.effCur] = input;
+                    } else {
+                        input.forEach((e, i) => {
+                            if (e != preInput[i]) {
+                                hook.inputs[hook.effCur] = input;
+                                return false;
+                            }
+                        });
+                    }
+                }
+                if (hook.inputs[hook.effCur] != preInput) {
+                    hook.effects.push(callback);
+                }
+                hook.effCur++;
+            }
+        }
+
+        //test
+        function Example() {
+            const [value, setValue] = Hook.useState(0);
+            const [value2, setValue2] = Hook.useState(0);
+            const [value3, setValue3] = Hook.useState(0);
+
+            Hook.useEffect(() => {
+                updateSum();
+                setTimeout(() => setValue(value + 1), 50);
+                setTimeout(() => setValue2(value2 + 1), 75);
+                setTimeout(() => setValue3(value3 + 1), 100);
+            })
+
+            ele = document.createElement("h3");
+            ele.innerText = `[${value}, ${value2}, ${value3}]`;
+
+            return ele;
+        }
+
+        Hook.render(Example, r1 = document.getElementById('root'));
+        Hook.render(Example, r2 = document.getElementById('root2'));
+        r3 = document.getElementById('sum')
+
+        function updateSum() {
+            var a = JSON.parse(r1.innerText);
+            var b = JSON.parse(r2.innerText).reverse();
+
+            var sum = a.map((a, i) => a + b[i]);
+            r3.innerText = `[${sum.join(", ")}]`;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<html>
+
+<head>
+        <meta charset="utf-8" />
+        <title>hello world</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+                integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <style>
+                .vscodedark {
+                        background: #141414;
+                        padding: 2px;
+                }
+                .linear_hidden {
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: visibility 0s 0.6s, opacity 0.6s linear;
+                }
+        </style>
+        <div id="v_sec" class="vscodedark">
+                <div><span style="color: #6a9955;">&lt;</span><span style="color: #6a9955;">!--</span><span style="color: #6a9955;">Hello</span><span> </span><span style="color: #6a9955;">World</span><span style="color: #6a9955;">--</span><span style="color: #6a9955;">&gt;</span></div>
+                <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">head</span><span
+                                style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+                                style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span><span
+                                style="color: #c586c0;">@</span><span style="color: #9cdcfe;">ViewData</span><span
+                                style="color: #d4d4d4;">[</span><span style="color: #ce9178;">"</span><span
+                                style="color: #ce9178;">title</span><span style="color: #ce9178;">"</span><span
+                                style="color: #d4d4d4;">]</span><span style="color: #808080;">&lt;</span><span
+                                style="color: #808080;">/</span><span style="color: #569cd6;">title</span><span
+                                style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #808080;">&lt;</span><span style="color: #808080;">/</span><span
+                                style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span
+                                style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #c586c0;">@{</span></div>
+                <div><span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span
+                                style="color: #569cd6;">string</span><span> </span><span
+                                style="color: #9cdcfe;">p</span><span style="color: #d4d4d4;">=</span><span
+                                style="color: #ce9178;">"</span><span style="color: #ce9178;">Layout</span><span>
+                        </span><span style="color: #ce9178;">Page</span><span style="color: #ce9178;">"</span><span
+                                style="color: #d4d4d4;">;</span></div>
+                <div><span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+                                style="color: #569cd6;">p</span><span style="color: #808080;">&gt;</span><span
+                                style="color: #d4d4d4;"> </span><span style="color: #c586c0;">@</span><span
+                                style="color: #9cdcfe;">p</span><span style="color: #d4d4d4;"> </span><span
+                                style="color: #808080;">&lt;</span><span style="color: #808080;">/</span><span
+                                style="color: #569cd6;">p</span><span style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+                                style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span><span
+                                style="color: #d4d4d4;"> </span><span style="color: #c586c0;">@</span><span
+                                style="color: #dcdcaa;">RenderBody</span><span style="color: #d4d4d4;">(</span><span
+                                style="color: #d4d4d4;">)</span><span> </span><span
+                                style="color: #808080;">&lt;</span><span style="color: #808080;">/</span><span
+                                style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+                                style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;</span><span
+                                style="color: #9cdcfe;">console</span><span style="color: #d4d4d4;">.</span><span
+                                style="color: #dcdcaa;">log</span><span style="color: #d4d4d4;">(</span>
+                                <span style="color: #b5cea8;">123</span>
+                                <span style="color: #d4d4d4;">)</span><span
+                                style="color: #d4d4d4;">;</span></div>
+                <div><span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+                                style="color: #808080;">/</span><span style="color: #569cd6;">script</span><span
+                                style="color: #808080;">&gt;</span></div>
+                <div><span style="color: #c586c0;">}</span></div>
+                <div><span style="color: #808080;">&lt;</span><span style="color: #808080;">/</span><span
+                                style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span><span>
+                        </span><spen> </spen><spen> </spen></div>
+        </div>
+
+        <div id="main_node"
+                style="display: none; border: 1px solid black; width: 300px; margin:5px;overflow: hidden;font-family: '돋움체', DotumChe;">
+                <div class="node_title" style="background-color: #9cdcfe; width: 100%;text-align: center">InTag</div>
+                <div class="node_text"></div>
+        </div>
+        <div id="node_box" style="height:350px; overflow: hidden; width:100%;"> Need Javascript Enabled. </div>
+        <div>dd</div>
+
+        <script>
+                const spen_list = [null];
+                const v_sec = $('#v_sec span').each(function (i, obj) {
+                        // console.log($(obj).html());
+                        spen_list.push(obj);
+                });
+                const stack = [];
+                let [pre_i, c_i] = [0, 0];
+                let c_node = null;
+                let phase = 2;
+
+                setInterval(function () {
+                        $(spen_list[pre_i]).css("border", "");
+                        $(spen_list[c_i]).css("border", "1px solid white");
+                        if (spen_list[c_i] == null) {
+                                $("#node_box").html('');
+                                newNode("InTagNode",2);
+                                next();
+                                return;
+                        }
+
+                        const text0 = spen_list[c_i-1]?.textContent
+                        const text = spen_list[c_i].textContent
+                        const text2 = spen_list[c_i+1]?.textContent
+                        
+                        if(phase==7){
+                                if(text=="\"") popNode();
+                                addText(text);
+                                next();
+                                return;
+                        }
+                        else if(phase == 5)
+                        {
+                                if(/[a-zA-Z()\[\]]/.test(text)){
+                                        addText(text);
+                                        next();
+                                        return;
+                                }
+                                else if(text=="\"") {
+                                        addText(text);
+                                        stack.push([c_node,phase]);
+                                        newNode("CS_StrNode", 7);
+                                        next();
+                                        return;;
+                                }else{
+                                        popNode();
+                                        return;
+                                }
+                        }
+
+
+                        switch (text) {
+                                case "<":
+                                        if(text2 == "!--"){
+                                                addText(text);
+                                                break;
+                                        } 
+                                        if ((phase ==2 || phase==6 ) && text2 != '/'){
+                                                stack.push([c_node,phase]);
+                                                newNode("TagNode" , 0);
+                                        }  
+                                        else{
+                                                popNode();
+                                        } 
+                                        addText(text);
+                                        break;
+                                case ">":
+                                        if(text0 == "--"){
+                                                addText(text);
+                                                break;
+                                        }
+                                        addText(text);
+                                        if(phase == 0){ 
+                                                stack.push([c_node,++phase]);
+                                                
+                                                newNode(text0 == "script" ? "JS_InNode" : "InTagNode",2);
+                                        }
+                                        else{
+                                                popNode();
+                                        }
+                                        break;
+                                case "@": 
+                                        stack.push([c_node,phase]);
+                                        newNode("ImplicitNode", 5);
+                                        break;
+                                case "@{":
+                                        stack.push([c_node,phase]);
+                                        newNode("CS_inNode", 6);
+                                        break;
+                                case "}":
+                                        if(phase == 6){
+                                                popNode();
+                                                break;
+                                        }
+                                case "\"":
+                                        addText(text);
+                                        stack.push([c_node,phase]);
+                                        newNode("CS_StrNode", 7);
+                                        break;
+                                default: addText(text);
+                        }
+                        next();
+                }, 200);
+
+                function next(){
+                        pre_i = c_i;
+                        c_i = ++c_i % spen_list.length;
+                }
+
+                function newNode(name,p) {
+                        addText("<b>"+name.replace("Node","")+"</b>");
+                        phase = p;
+                        c_node = $("#main_node").clone();
+                        c_node.find(".node_title").text(name);
+                        c_node.css("display", "block").appendTo("#node_box");
+                        let color = "#FFFFFF";
+                        switch(name){
+                                case "TagNode":
+                                case "InTagNode" : color = "#FFA500"; break;
+                                case "CS_StrNode":
+                                case "CS_inNode" : color = "#00FF00"; break;
+                                case "ImplicitNode": color = "#DDA0DD"; break;
+                                case "JS_InNode": color = "#FFFF00"; break;
+                        }
+                        c_node.find(".node_title").css("background-color",color);
+                }
+                function popNode(){
+                        var rm = c_node;
+                        rm.addClass("linear_hidden");
+                        setTimeout(()=>{rm.remove();},600);
+                        [c_node, phase] = stack.pop();
+                }
+
+                function addText(text) {
+                        const nodeText = $(c_node).find(".node_text");
+                        nodeText.append( " " +text.trim());
+                }
+
+        </script>
+</body>
+</html>

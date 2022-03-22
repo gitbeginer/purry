@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+(function(){
+    let remain = 30;
+    let time = performance.now();
+    const inter = setInterval(() => {
+        const next = performance.now();
+        const delta = next - time;
+        time = next;
+        remain-= delta/1000;
+        document.body.innerText = remain.toFixed(1);
+        if(remain<=0) {
+            location.reload();
+            clearInterval(inter);
+        }
+    }, 100);
+})();
+</script>
+</html>

@@ -1,0 +1,32 @@
+<html lang="kr">
+<head>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/jquery-3.6.0.js" crossorigin="use-credentials"></script>
+	<link rel="icon" href='/favicon.ico' />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+
+    <h1>hello world</h1>
+    <p><a href="/main">main</a></p>
+    <p><a href="/test/multipart.html">multipart.html</a></p>
+    <p><a href="/test/leaveMe.html">leaveMe.html</a></p>
+    <p><a href="/test/param.html">param.html</a></p>
+    <p><a href="/hooktest.html">hooktest.html</a></p>
+    <p><a href="/myReact.html">myReact.html</a></p>
+    
+    <script>
+        const start =  performance.now();
+        $.getJSON("/sedata", function(data){
+            console.log(data);
+        });
+            
+        console.log(performance.now() - start);
+    </script>
+
+</body>
+</html>
+
+

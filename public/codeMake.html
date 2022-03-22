@@ -1,0 +1,330 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>hello world2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <style>
+        .vscodedark {
+            background: #141414;
+            padding: 2px;
+        }
+
+        .linear_hidden {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.6s, opacity 0.6s linear;
+        }
+    </style>
+    <div id="v_sec" class="vscodedark" style="display:black;">
+        <span style="color: #6a9955;">&lt;</span><span style="color: #6a9955;">!--</span><span
+            style="color: #6a9955;">Hello</span><span> </span><span style="color: #6a9955;">World</span><span
+            style="color: #6a9955;">--</span><span style="color: #6a9955;">&gt;</span> <span><br /></span>
+        <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">head</span><span
+            style="color: #808080;">&gt;</span><span><br /></span>
+        <span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+            style="color: #569cd6;">title</span><span style="color: #808080;">&gt;</span><span
+            style="color: #c586c0;">@</span><span style="color: #9cdcfe;">ViewData</span><span
+            style="color: #d4d4d4;">[</span><span style="color: #ce9178;">"</span><span
+            style="color: #ce9178;">title</span><span style="color: #ce9178;">"</span><span
+            style="color: #d4d4d4;">]</span><span style="color: #808080;">&lt;</span><span
+            style="color: #808080;">/</span><span style="color: #569cd6;">title</span><span
+            style="color: #808080;">&gt;</span> <span><br /></span>
+        <span style="color: #808080;">&lt;</span><span style="color: #808080;">/</span><span
+            style="color: #569cd6;">head</span><span style="color: #808080;">&gt;</span><span><br /></span>
+        <span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span
+            style="color: #808080;">&gt;</span><span><br /></span>
+        <span style="color: #c586c0;">@{</span><span><br /></span>
+        <span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #569cd6;">string</span><span>
+        </span><span style="color: #9cdcfe;">p</span><span style="color: #d4d4d4;">=</span><span
+            style="color: #ce9178;">"</span><span style="color: #ce9178;">Layout</span><span>
+        </span><span style="color: #ce9178;">Page</span><span style="color: #ce9178;">"</span><span
+            style="color: #d4d4d4;">;</span><span><br /></span>
+        <span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+            style="color: #569cd6;">p</span><span style="color: #808080;">&gt;</span><span style="color: #d4d4d4;">
+        </span><span style="color: #c586c0;">@</span><span style="color: #9cdcfe;">p</span><span
+            style="color: #d4d4d4;"> </span><span style="color: #808080;">&lt;</span><span
+            style="color: #808080;">/</span><span style="color: #569cd6;">p</span><span
+            style="color: #808080;">&gt;</span><span><br /></span>
+        <span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+            style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span><span style="color: #d4d4d4;">
+        </span><span style="color: #c586c0;">@</span><span style="color: #dcdcaa;">RenderBody</span><span
+            style="color: #d4d4d4;">(</span><span style="color: #d4d4d4;">)</span><span> </span><span
+            style="color: #808080;">&lt;</span><span style="color: #808080;">/</span><span
+            style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span><span><br /></span>
+        <span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+            style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span><span><br /></span>
+        <span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;</span><span
+            style="color: #9cdcfe;">console</span><span style="color: #d4d4d4;">.</span><span
+            style="color: #dcdcaa;">log</span><span style="color: #d4d4d4;">(</span>
+        <span style="color: #b5cea8;">123</span>
+        <span style="color: #d4d4d4;">)</span><span style="color: #d4d4d4;">;</span>
+        <span><br /></span>
+        <span style="color: #d4d4d4;">&nbsp; &nbsp; </span><span style="color: #808080;">&lt;</span><span
+            style="color: #808080;">/</span><span style="color: #569cd6;">script</span><span
+            style="color: #808080;">&gt;</span><span><br /></span>
+        <span style="color: #c586c0;">}</span><span><br /></span>
+        <span style="color: #808080;">&lt;</span><span style="color: #808080;">/</span><span
+            style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span><span>
+        </span>
+        <spen></spen>
+        <spen></spen>
+        <span><br /></span>
+    </div>
+
+    <div id="main_node"
+        style="display: none; border: 1px solid black; width: 300px; margin:5px;overflow: hidden;font-family: '돋움체', DotumChe;">
+        <div class="node_title" style="background-color: #9cdcfe; width: 100%;text-align: center">InTag</div>
+        <div class="node_text"></div>
+    </div>
+    <div id="node_box" style="height:350px; overflow: hidden; width:100%;"> Need Javascript Enabled. </div>
+    <div id="out_box" class="vscodedark" style="height:330px; overflow: hidden; color: #d4d4d4"></div>
+
+
+    <script>
+        const spen_list = [null];
+        const v_sec = $('#v_sec span').each(function (i, obj) {
+            spen_list.push(obj);
+        });
+
+        const stack = [];
+        let [pre_i, c_i] = [0, 0];
+        let c_node = null;
+        let phase = 2;
+        let rootNode = null;
+
+        while (spen_list[c_i] !== undefined) {
+
+            if (spen_list[c_i] == null) {
+                $("#node_box").html('');
+                newNode("InTagNode", 2);
+                rootNode = c_node;
+                rootNode.appendTo("#node_box")
+                rootNode.css("display", "block")
+                next();
+                continue;
+            }
+
+            const text0 = spen_list[c_i - 1]?.textContent;
+            const text = spen_list[c_i].textContent;
+            const text2 = spen_list[c_i + 1]?.textContent;
+
+            if (phase == 7) {
+                if (text == "\"") popNode();
+                addText(text);
+                next();
+                continue;
+            }
+            else if (phase == 5) {
+                if (/[a-zA-Z()\[\]]/.test(text)) {
+                    addText(text);
+                    next();
+                    continue;
+                }
+                else if (text == "\"") {
+                    addText(text);
+                    stack.push([c_node, phase]);
+                    newNode("CS_StrNode", 7);
+                    next();
+                    continue;;
+                } else {
+                    popNode();
+                    continue;
+                }
+            }
+
+
+            switch (text) {
+                case "<":
+                    if (text2 == "!--") {
+                        addText(text);
+                        break;
+                    }
+                    if ((phase == 2 || phase == 6) && text2 != '/') {
+                        stack.push([c_node, phase]);
+                        newNode("TagNode", 0);
+                    }
+                    else {
+                        popNode();
+                    }
+                    addText(text);
+                    break;
+                case ">":
+                    if (text0 == "--") {
+                        addText(text);
+                        break;
+                    }
+                    addText(text);
+                    if (phase == 0) {
+                        stack.push([c_node, ++phase]);
+
+                        newNode(text0 == "script" ? "JS_InNode" : "InTagNode", 2);
+                    }
+                    else {
+                        popNode();
+                    }
+                    break;
+                case "@":
+                    stack.push([c_node, phase]);
+                    newNode("ImplicitNode", 5);
+                    break;
+                case "@{":
+                    stack.push([c_node, phase]);
+                    newNode("CS_inNode", 6);
+                    break;
+                case "}":
+                    if (phase == 6) {
+                        popNode();
+                        break;
+                    }
+                case "\"":
+                    addText(text);
+                    stack.push([c_node, phase]);
+                    newNode("CS_StrNode", 7);
+                    break;
+                default: addText(text);
+            }
+            next();
+        }
+
+        function next() {
+            pre_i = c_i++;
+        }
+
+        function newNode(name, p) {
+            const nodeText = $(c_node).find(".node_text");
+            const pname = $(c_node).find(".node_title").text();
+            phase = p;
+            c_node = $("#main_node").clone();
+            c_node.appendTo("#node_box");
+            c_node.find(".node_title").text(name);
+            c_node[0].pname = pname;
+            const txt2 = $("<b></b>").text(name.replace("Node", ""));
+            txt2[0]._child = c_node;
+            nodeText.append(txt2);
+            nodeText.append(" ");
+            let color = "#FFFFFF";
+            switch (name) {
+                case "TagNode":
+                case "InTagNode": color = "#FFA500"; break;
+                case "CS_StrNode":
+                case "CS_inNode": color = "#00FF00"; break;
+                case "ImplicitNode": color = "#DDA0DD"; break;
+                case "JS_InNode": color = "#FFFF00"; break;
+            }
+            c_node.find(".node_title").css("background-color", color);
+        }
+        function popNode() {
+            [c_node, phase] = stack.pop();
+        }
+
+        function addText(text) {
+            const nodeText = $(c_node).find(".node_text");
+            nodeText.append("<span>" + text + "</span> ");
+        }
+
+        rootNode[0].pname = "CS_inNode";
+        addNode(rootNode);
+        setInterval(() => {
+            const ci = c_node.cidx++;
+            const childs = c_node[0].querySelector(".node_text").children;
+            const len = childs.length;
+            $(childs[(len + ci - 1) % len]).css("border", "");
+
+            if (childs.length <= ci) {
+                
+                if (c_node == rootNode) {
+                    if(childs.length >= ci -4) return;
+                    $("#out_box").text("");
+                    stack.length = 0;
+                    addNode(c_node);
+                    return;
+                }
+                const rm = c_node;
+                rm.addClass("linear_hidden");
+                setTimeout(() => { rm.remove(); }, 555);
+                c_node = stack.pop();
+                return;
+            }
+            $(childs[ci]).css("border", "1px solid black");
+            if (childs[ci]?._child != undefined) {
+                addNode($(childs[ci]._child));
+                return;
+            }
+            const pname = c_node[0]?.pname;
+            const name = c_node.find(".node_title").text();
+            let str = childs[ci]?.textContent;
+            if(str == '')  str = "<br/>";
+            else if(str == '"') str = "<span style='color: #ce9178;'>"+str +"</span>";
+            else{
+                switch (name) {
+                    case "CS_StrNode":
+                    case "TagNode":
+                    case "InTagNode":
+                    case "JS_InNode":
+                        str = "<span style='color: #ce9178;'>"+str +"</span>";
+                }
+            }
+
+            if (ci == 0 || childs.length -1 == ci ) {
+                const both = childs.length < 2;
+                switch (name) {
+                    case "TagNode":
+                    case "InTagNode":
+                    case "JS_InNode":
+                        if (pname == "CS_inNode") {
+                            if (both) write("W(<span style='color: #ce9178;'>@\"</span>" + str + "<span style='color: #ce9178;'>\"</span>);");
+                            else if (ci == 0) write("W(<span style='color: #ce9178;'>@\"</span>" + str);
+                            else write(str + "<span style='color: #ce9178;'>\"</span>);")
+                            return;
+                        }
+                        break;
+                    case "CS_inNode":
+                    
+                        if (pname != "CS_inNode") {
+                            if (both) write("<span style='color: #ce9178;'>\"</span>);" + str + "W(<span style='color: #ce9178;'>@\"</span>");
+                            else if (ci == 0) write("<span style='color: #ce9178;'>\"</span>);" + str);
+                            else write(str + "W(<span style='color: #ce9178;'>@\"</span>")
+                            return;
+                        }
+                        break;
+                    case "ImplicitNode":
+                        if (pname != "CS_inNode") {
+                            if (both) write("<span style='color: #ce9178;'>\"</span> + " + str + " + <span style='color: #ce9178;'>@\"</span>");
+                            else if (ci == 0) write("<span style='color: #ce9178;'>\"</span> + " + str);
+                            else write(str + " + <span style='color: #ce9178;'>@\"</span>");
+                            
+                            return;
+                        } else {
+                            if (both) write("W(" + str + ");");
+                            else if (ci == 0) write("W(" + str);
+                            else write(str + ");");
+                            return;
+                        }
+                }
+            }
+            write(str);
+        }, 200);
+
+        function write(txt) {
+            $("#out_box").append(txt);
+        }
+
+        function addNode(nx_node) {
+            stack.push(c_node);
+            nx_node.removeClass("linear_hidden");
+            nx_node.cidx = 0;
+            nx_node.appendTo("#node_box")
+            nx_node.css("display", "block")
+            c_node = nx_node;
+        }
+
+    </script>
+</body>
+
+</html>

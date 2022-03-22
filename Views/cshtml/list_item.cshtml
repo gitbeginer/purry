@@ -1,0 +1,20 @@
+@{
+    JL list = ViewData["vlist"] as JL;
+    foreach (JO item in list)
+    {
+        <div id='p_@(item["page_num"])' class='item_box'>
+            <a href='https://gall.dcinside.com/mgallery/board/view/?id=game_dev&no=@(item["page_num"])&page=1' title="본문 링크" rel="noopener noreferrer" target='_blank'>
+                <img src='@(item["server"])img_page/@(item["thumbnail"])' class='item_img loading' onload='this.classList.remove("loading")' />
+            </a>
+            <a href='/user?p=@(item["page_num"])' style="text-decoration:none; color: inherit;" title='@item["nick"]의 개발일지' target='_blank'>
+                <div class='item_title'>@item["title"]</div>
+                <div style="display: flex;">
+                    <span class='item_nick'>@item["nick"]</span><span>@item["ip"]</span>
+                    <span>&nbsp;</span>
+                    <span>@item["pri_num"]</span>
+                    <span style="margin-left:auto;">@item["wdate"]</span>
+                </div>
+            </a>
+        </div>
+    }
+}

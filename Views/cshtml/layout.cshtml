@@ -1,0 +1,20 @@
+<html lang="kr">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/jquery-3.6.0.js" crossorigin="use-credentials"></script>
+	<link rel="icon" href='/favicon.ico' crossorigin="use-credentials" />
+    <link rel="stylesheet" type="text/css" href="/main.css" crossorigin="use-credentials" />
+	<title> @ViewData["title"] </title>
+</head>
+<body>
+	<div> @RenderBody() </div>
+	<noscript>현재 사용 중인 브라우저는 스크립트를 지원하지 않거나, 해당 기능이 활성화되어 있지 않습니다!</noscript>
+	<footer style="display: flex; justify-content: center;">
+		<a href="/main" target="_self" title="home">
+			<img src="/img/logo.png" style="object-fit: contain;width: 50px;" />
+		</a>
+	</footer>
+</body>
+</html>

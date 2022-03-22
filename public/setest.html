@@ -1,0 +1,63 @@
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/jquery-3.6.0.js" crossorigin="use-credentials"></script>
+  <link rel="icon" href='/favicon.ico' />
+  <link rel="stylesheet" type="text/css" href="/main.css" />
+  <title>search test</title>
+</head>
+
+<body>
+  <section class="webdesigntuts-workshop">
+    <form action="/main" autocomplete="off" method="get" role="search">
+      <label id="se_label" for="se_writer">
+        <svg xmlns="http://www.w3.org/2000/svg" style="fill: white;align-self: center;" id="arrow-circle-down"
+          viewBox="0 0 24 24" width="20" height="20">
+          <g>
+            <path
+              d="M23,16H2.681l.014-.015L4.939,13.7a1,1,0,1,0-1.426-1.4L1.274,14.577c-.163.163-.391.413-.624.676a2.588,2.588,0,0,0,0,3.429c.233.262.461.512.618.67l2.245,2.284a1,1,0,0,0,1.426-1.4L2.744,18H23a1,1,0,0,0,0-2Z" />
+            <path
+              d="M1,8H21.255l-2.194,2.233a1,1,0,1,0,1.426,1.4l2.239-2.279c.163-.163.391-.413.624-.675a2.588,2.588,0,0,0,0-3.429c-.233-.263-.461-.513-.618-.67L20.487,2.3a1,1,0,0,0-1.426,1.4l2.251,2.29L21.32,6H1A1,1,0,0,0,1,8Z" />
+          </g>
+        </svg>
+      </label>
+      <input id="se_writer" name="se" type="text" placeholder="글쓴이" value='' />
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" style="fill: white" viewBox="0 0 24 24" width="20"
+          height="20">
+          <path
+            d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z" />
+        </svg>
+      </button>
+
+    </form>
+
+  </section>
+  <div
+    style="position:absolute;height: fit-content; width:100%;max-width:1680px; z-index:1; display: flex; justify-content: center;">
+    <ul class="list" aria-disabled="true" style="display: none;">
+      <li class="selected" id="li0" style="display:none;"></li>
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+      <li>list5</li>
+      <li>list6</li>
+      <li>list7</li>
+      <li>list8</li>
+      <li>list9</li>
+      <li>list10</li>
+      <li>list11</li>
+      <li>list12</li>
+      <li>list13</li>
+      <li>list14</li>
+      <li>list15</li>
+    </ul>
+  </div>
+  <script src="/js/search.js" ></script>
+</body>
+
+</html>
