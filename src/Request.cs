@@ -6,7 +6,7 @@ namespace purry;
 public class Request : Dictionary<string, string>
 {
     public enum Method { GET, POST, UNKNOW }
-    public const int MAXSIZE = 1024 * 1024;
+    public const int MAXSIZE = 1024 * 1024 * 50;
     public readonly Method method = Method.UNKNOW;
     public NameValueCollection param = new();
     internal readonly Socket client;
@@ -154,7 +154,7 @@ public class Request : Dictionary<string, string>
 
     JO MakeMultipart()
     {
-        string boundary = "\r\n--" + ParseColon(this["Content-Type"])["boundary"];
+        string boundary = "\r\n--" + ParseColon(this["Content-Type"])["boundary"].Trim('"');
         string data = "\r\n" + body;
         var jo = new JO();
         int idx = 0;

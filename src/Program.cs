@@ -170,16 +170,18 @@ app.Get("/test/reply", (req, res) =>
 
 app.Post("/test/multipart", (req, res) =>
 {
+    string flist = "";
     foreach (J tem in (req.mPart["myfile"] as JL).GetList())
     {
         byte[] bytes = tem["data"];
         if (bytes?.Length is null or 0) continue;
         string fanme = tem["filename"].Trim('"');
+        flist += fanme + ", ";
         Util.SaveFile("public/upload/" + fanme, bytes);
     }
-    string fname = req.mPart["fname"][0]["data"];
-    string lname = req.mPart["lname"][0]["data"];
-    res.Send(fname + " " + lname);
+    // string fname = req.mPart["fname"][0]["data"];
+    // string lname = req.mPart["lname"][0]["data"];
+    res.Send(flist);
 });
 
 app.Forward("/", "/main");
