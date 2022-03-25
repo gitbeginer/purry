@@ -134,7 +134,6 @@ public class Request : Dictionary<string, string>
         //foreach (var t in this) WriteLine($"{t.Key}: {t.Value}");
         //foreach (var t in param.Keys) WriteLine($"{t}: {param.Get(t.ToString())}");
         #endregion
-
     }
 
     public string NewSessionID()
